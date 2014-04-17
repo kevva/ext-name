@@ -25,9 +25,5 @@ module.exports = function (str) {
     var mime = map(obj, str);
     var ext = invert(obj)[mime] || path.extname(str);
 
-    if (mime) {
-        return { ext: ext, mime: mime };
-    }
-
-    return { ext: ext };
+    return mime ? { ext: ext, mime: mime } : { ext: ext };
 };
