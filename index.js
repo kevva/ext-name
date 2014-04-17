@@ -13,12 +13,21 @@ var path = require('path');
  */
 
 module.exports = function (str) {
-    var mime = map(extList, str);
-    var ext = invert(extList)[mime] || path.extname(str);
+    var obj = {};
+    var key = Object.keys(extList).sort(function (a, b) {
+        return b.length - a.length;
+    });
+
+    for (var i = 0; i < Object.keys(extList).length; i++) {
+        obj[key[i]] = extList[key[i]];
+    }
+
+    var mime = map(obj, str);
+    var ext = invert(obj)[mime] || path.extname(str);
 
     if (mime) {
         return { ext: ext, mime: mime };
     }
 
-    return ext;
+    return { ext: ext };
 };

@@ -12,6 +12,8 @@ describe('extname()', function () {
         assert.strictEqual(extname('foobar.py').mime, 'text/x-script.python');
         assert.strictEqual(extname('foobar.pnm').ext, 'pnm');
         assert.strictEqual(extname('foobar.pnm').mime, 'image/x-portable-anymap');
+        assert.strictEqual(extname('foobar.tar.gz').ext, 'tar.gz');
+        assert.strictEqual(extname('foobar.tar.gz').mime, 'application/x-tgz');
         cb();
     });
 });
