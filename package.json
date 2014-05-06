@@ -28,7 +28,7 @@
     "mime"
   ],
   "dependencies": {
-    "ext-list": "^0.1.0",
+    "ext-list": "^0.2.0",
     "map-key": "^0.1.1",
     "underscore.string": "~2.3.3"
   },

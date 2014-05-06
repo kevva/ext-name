@@ -6,14 +6,20 @@ var extname = require('./');
 
 describe('extname()', function () {
     it('should return a files extension and MIME type', function (cb) {
-        assert.strictEqual(extname('foobar.tar').ext, 'tar');
-        assert.strictEqual(extname('foobar.tar').mime, 'application/x-tar');
-        assert.strictEqual(extname('foobar.py').ext, 'py');
-        assert.strictEqual(extname('foobar.py').mime, 'text/x-script.python');
-        assert.strictEqual(extname('foobar.pnm').ext, 'pnm');
-        assert.strictEqual(extname('foobar.pnm').mime, 'image/x-portable-anymap');
-        assert.strictEqual(extname('foobar.tar.gz').ext, 'tar.gz');
-        assert.strictEqual(extname('foobar.tar.gz').mime, 'application/x-tgz');
-        cb();
+        extname('foobar.tar', function (err, res) {
+            assert.strictEqual(res.ext, 'tar');
+            assert.strictEqual(res.mime, 'application/x-tar');
+
+            extname('foobar.gif', function (err, res) {
+                assert.strictEqual(res.ext, 'gif');
+                assert.strictEqual(res.mime, 'image/gif');
+
+                extname('foobar.pnm', function (err, res) {
+                    assert.strictEqual(res.ext, 'pnm');
+                    assert.strictEqual(res.mime, 'image/x-portable-anymap');
+                    cb();
+                });
+            });
+        });
     });
 });

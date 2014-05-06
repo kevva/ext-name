@@ -12,20 +12,26 @@ var path = require('path');
  * @api public
  */
 
-module.exports = function (str) {
-    var obj = {};
-    var key = Object.keys(extList).sort(function (a, b) {
-        return b.length - a.length;
+module.exports = function (str, cb) {
+    extList(function (err, res) {
+        if (err) {
+            return cb(err);
+        }
+
+        var obj = {};
+        var key = Object.keys(res).sort(function (a, b) {
+            return b.length - a.length;
+        });
+
+        for (var i = 0; i < Object.keys(res).length; i++) {
+            obj[key[i]] = res[key[i]];
+        }
+
+        var mime = map(obj, str);
+        var ext = Object.keys(obj).filter(function (key) {
+            return endsWith(str, key);
+        })[0] || path.extname(str);
+
+        cb(null, mime ? { ext: ext, mime: mime } : { ext: ext });
     });
-
-    for (var i = 0; i < Object.keys(extList).length; i++) {
-        obj[key[i]] = extList[key[i]];
-    }
-
-    var mime = map(obj, str);
-    var ext = Object.keys(obj).filter(function (key) {
-        return endsWith(str, key);
-    })[0] || path.extname(str);
-
-    return mime ? { ext: ext, mime: mime } : { ext: ext };
 };

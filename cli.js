@@ -41,4 +41,6 @@ if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
  * Run
  */
 
-console.log(extname(input).ext, extname(input).mime);
+extname(input[0], function (err, res) {
+    console.log(res.ext, res.mime);
+});

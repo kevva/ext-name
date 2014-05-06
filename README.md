@@ -13,8 +13,14 @@ $ npm install --save extname
 ```js
 var extname = require('extname');
 
-extname('foobar.tar');
-// => { 'ext': 'tar', 'mime': 'application/x-tar' }
+extname('foobar.tar', function (err, res) {
+    if (err) {
+        throw err;
+    }
+
+    console.log(res);
+    // => { 'ext': 'tar', 'mime': 'application/x-tar' }
+});
 ```
 
 ## CLI
