@@ -1,9 +1,9 @@
 {
-  "name": "extname",
+  "name": "ext-name",
   "version": "0.2.0",
   "description": "Get the file extension and MIME type from a file",
   "license": "MIT",
-  "repository": "kevva/extname",
+  "repository": "kevva/ext-name",
   "author": {
     "name": "Kevin Mårtensson",
     "email": "kevinmartensson@gmail.com",

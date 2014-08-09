@@ -1,17 +1,17 @@
-# extname [![Build Status](https://travis-ci.org/kevva/extname.svg?branch=master)](https://travis-ci.org/kevva/extname)
+# ext-name [![Build Status](https://travis-ci.org/kevva/ext-name.svg?branch=master)](https://travis-ci.org/kevva/ext-name)
 
 > Get the file extension and MIME type from a file
 
 ## Install
 
 ```bash
-$ npm install --save extname
+$ npm install --save ext-name
 ```
 
 ## Usage
 
 ```js
-var extname = require('extname');
+var extname = require('ext-name');
 
 extname('foobar.tar', function (err, res) {
     if (err) {
@@ -26,7 +26,7 @@ extname('foobar.tar', function (err, res) {
 ## CLI
 
 ```bash
-$ npm install --global extname
+$ npm install --global ext-name
 ```
 
 ```bash
