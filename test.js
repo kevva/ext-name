@@ -1,24 +1,25 @@
-/*global describe, it */
 'use strict';
 
-var assert = require('assert');
 var extname = require('./');
+var test = require('ava');
 
-describe('extname()', function () {
-    it('should return a files extension and MIME type', function (cb) {
-        extname('foobar.tar', function (err, res) {
-            assert.strictEqual(res.ext, 'tar');
-            assert.strictEqual(res.mime, 'application/x-tar');
+test('return file extension and MIME type', function (t) {
+    t.plan(9);
 
-            extname('foobar.gif', function (err, res) {
-                assert.strictEqual(res.ext, 'gif');
-                assert.strictEqual(res.mime, 'image/gif');
+    extname('foobar.tar', function (err, res) {
+        t.assert(!err);
+        t.assert(res.ext === 'tar');
+        t.assert(res.mime === 'application/x-tar');
 
-                extname('foobar.pnm', function (err, res) {
-                    assert.strictEqual(res.ext, 'pnm');
-                    assert.strictEqual(res.mime, 'image/x-portable-anymap');
-                    cb();
-                });
+        extname('foobar.gif', function (err, res) {
+            t.assert(!err);
+            t.assert(res.ext === 'gif');
+            t.assert(res.mime === 'image/gif');
+
+            extname('foobar.pnm', function (err, res) {
+                t.assert(!err);
+                t.assert(res.ext === 'pnm');
+                t.assert(res.mime === 'image/x-portable-anymap');
             });
         });
     });

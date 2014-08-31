@@ -16,7 +16,7 @@
     "extname": "cli.js"
   },
   "scripts": {
-    "test": "mocha --reporter list"
+    "test": "node test.js"
   },
   "files": [
     "cli.js",
@@ -32,6 +32,6 @@
     "underscore.string": "~2.3.3"
   },
   "devDependencies": {
-    "mocha": "^1.18.2"
+    "ava": "0.0.4"
   }
 }
