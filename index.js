@@ -2,7 +2,6 @@
 
 var endsWith = require('underscore.string').endsWith;
 var extList = require('ext-list');
-var map = require('map-key');
 var path = require('path');
 
 /**
@@ -15,23 +14,23 @@ var path = require('path');
 module.exports = function (str, cb) {
     extList(function (err, res) {
         if (err) {
-            return cb(err);
+            cb(err);
+            return;
         }
 
         var obj = {};
-        var key = Object.keys(res).sort(function (a, b) {
+        var keys = Object.keys(res).sort(function (a, b) {
             return b.length - a.length;
         });
 
-        for (var i = 0; i < Object.keys(res).length; i++) {
-            obj[key[i]] = res[key[i]];
-        }
+        keys.forEach(function (key, i) {
+            obj[keys[i]] = res[keys[i]];
+        });
 
-        var mime = map(obj, str);
         var ext = Object.keys(obj).filter(function (key) {
             return endsWith(str, key);
         })[0] || path.extname(str);
 
-        cb(null, mime ? { ext: ext, mime: mime } : { ext: ext });
+        cb(null, obj[ext] ? { ext: ext, mime: obj[ext] } : { ext: ext });
     });
 };
