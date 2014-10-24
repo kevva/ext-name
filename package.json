@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "ext-list": "^2.0.0",
+    "meow": "^2.0.0",
     "underscore.string": "~2.3.3"
   },
   "devDependencies": {

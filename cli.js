@@ -1,44 +1,40 @@
 #!/usr/bin/env node
 'use strict';
 
-var input = process.argv.slice(2);
-var pkg = require('./package.json');
 var extname = require('./');
+var meow = require('meow');
 
 /**
- * Help screen
+ * Initialize CLI
  */
 
-function help() {
-    console.log(pkg.description);
-    console.log('');
-    console.log('Usage');
-    console.log('  $ extname <file>');
-    console.log('');
-    console.log('Example');
-    console.log('  $ extname file.tar.gz');
-}
+var cli = meow({
+    help: [
+        '  Usage',
+        '    extname <file>',
+        '',
+        '  Example',
+        '    extname file.tar.gz'
+    ].join('\n')
+});
 
 /**
- * Show help
+ * Show usage if no input is supplied
  */
 
-if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
-    help();
-    return;
-}
+if (!cli.input.length) {
+    console.error([
+        'Provide a file name',
+        '',
+        '  Example',
+        '    extname file.tar.gz'
+    ].join('\n'));
 
-/**
- * Show package version
- */
-
-if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
-    console.log(pkg.version);
-    return;
+    process.exit(1);
 }
 
 /**
  * Run
  */
 
-console.log(extname(input[0]));
+console.log(extname(cli.input[0]));
