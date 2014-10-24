@@ -41,11 +41,4 @@ if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
  * Run
  */
 
-extname(input[0], function (err, res) {
-    if (err) {
-        console.error(err);
-        process.exit(1);
-    }
-
-    console.log(res.ext, res.mime);
-});
+console.log(extname(input[0]));

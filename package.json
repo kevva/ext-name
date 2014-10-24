@@ -28,10 +28,10 @@
     "mime"
   ],
   "dependencies": {
-    "ext-list": "^0.2.0",
+    "ext-list": "^2.0.0",
     "underscore.string": "~2.3.3"
   },
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "^0.0.4"
   }
 }

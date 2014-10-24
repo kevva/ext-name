@@ -4,23 +4,12 @@ var extname = require('./');
 var test = require('ava');
 
 test('return file extension and MIME type', function (t) {
-    t.plan(9);
+    t.plan(6);
 
-    extname('foobar.tar', function (err, res) {
-        t.assert(!err);
-        t.assert(res.ext === 'tar');
-        t.assert(res.mime === 'application/x-tar');
-
-        extname('foobar.gif', function (err, res) {
-            t.assert(!err);
-            t.assert(res.ext === 'gif');
-            t.assert(res.mime === 'image/gif');
-
-            extname('foobar.pnm', function (err, res) {
-                t.assert(!err);
-                t.assert(res.ext === 'pnm');
-                t.assert(res.mime === 'image/x-portable-anymap');
-            });
-        });
-    });
+    t.assert(extname('foobar.tar').ext === 'tar');
+    t.assert(extname('foobar.tar').mime === 'application/x-tar');
+    t.assert(extname('foobar.gif').ext === 'gif');
+    t.assert(extname('foobar.gif').mime === 'image/gif');
+    t.assert(extname('foobar.pnm').ext === 'pnm');
+    t.assert(extname('foobar.pnm').mime === 'image/x-portable-anymap');
 });
