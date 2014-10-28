@@ -10,24 +10,24 @@ var meow = require('meow');
 
 var cli = meow({
 	help: [
-		'  Usage',
-		'    extname <file>',
+		'Usage',
+		'  extname <file>',
 		'',
-		'  Example',
-		'    extname file.tar.gz'
+		'Example',
+		'  extname file.tar.gz'
 	].join('\n')
 });
 
 /**
- * Show usage if no input is supplied
+ * Check for arguments
  */
 
 if (!cli.input.length) {
 	console.error([
-		'Provide a file name',
+		'Specify a file',
 		'',
-		'  Example',
-		'    extname file.tar.gz'
+		'Example',
+		'  extname file.tar.gz'
 	].join('\n'));
 
 	process.exit(1);
