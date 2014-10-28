@@ -12,18 +12,18 @@ var path = require('path');
  */
 
 module.exports = function (str) {
-    var obj = {};
-    var keys = Object.keys(extList()).sort(function (a, b) {
-        return b.length - a.length;
-    });
+	var obj = {};
+	var keys = Object.keys(extList()).sort(function (a, b) {
+		return b.length - a.length;
+	});
 
-    keys.forEach(function (key, i) {
-        obj[keys[i]] = extList()[keys[i]];
-    });
+	keys.forEach(function (key, i) {
+		obj[keys[i]] = extList()[keys[i]];
+	});
 
-    var ext = Object.keys(obj).filter(function (key) {
-        return endsWith(str, key);
-    })[0] || path.extname(str);
+	var ext = Object.keys(obj).filter(function (key) {
+		return endsWith(str, key);
+	})[0] || path.extname(str);
 
-    return obj[ext] ? { ext: ext, mime: obj[ext] } : { ext: ext };
+	return obj[ext] ? { ext: ext, mime: obj[ext] } : { ext: ext };
 };
