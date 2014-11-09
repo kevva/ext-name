@@ -25,13 +25,9 @@ module.exports = function (str) {
 		return endsWith(str, key);
 	})[0] || path.extname(str);
 
-	if (ext && obj[ext]) {
-		return { ext: ext, mime: obj[ext] }
+	if (!ext || !obj[ext]) {
+		return null;
 	}
 
-	if (ext) {
-		return { ext: ext }
-	}
-
-	return null;
+	return { ext: ext, mime: obj[ext] };
 };
