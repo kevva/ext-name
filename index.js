@@ -3,6 +3,7 @@
 var endsWith = require('underscore.string').endsWith;
 var extList = require('ext-list');
 var path = require('path');
+var sortKeysLength = require('sort-keys-length');
 
 /**
  * Get the file extension and MIME type from a file
@@ -13,9 +14,7 @@ var path = require('path');
 
 module.exports = function (str) {
 	var obj = {};
-	var keys = Object.keys(extList()).sort(function (a, b) {
-		return b.length - a.length;
-	});
+	var keys = Object.keys(sortKeysLength.desc(extList()));
 
 	keys.forEach(function (key, i) {
 		obj[keys[i]] = extList()[keys[i]];
