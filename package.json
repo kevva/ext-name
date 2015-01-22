@@ -28,10 +28,10 @@
     "mime"
   ],
   "dependencies": {
+    "ends-with": "^0.2.0",
     "ext-list": "^2.0.0",
     "meow": "^2.0.0",
-    "sort-keys-length": "^1.0.0",
-    "underscore.string": "~2.3.3"
+    "sort-keys-length": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^0.0.4"

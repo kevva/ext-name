@@ -1,6 +1,6 @@
 'use strict';
 
-var endsWith = require('underscore.string').endsWith;
+var endsWith = require('ends-with');
 var extList = require('ext-list');
 var sortKeysLength = require('sort-keys-length');
 
