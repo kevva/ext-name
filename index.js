@@ -2,7 +2,6 @@
 
 var endsWith = require('underscore.string').endsWith;
 var extList = require('ext-list');
-var path = require('path');
 var sortKeysLength = require('sort-keys-length');
 
 /**
@@ -13,20 +12,12 @@ var sortKeysLength = require('sort-keys-length');
  */
 
 module.exports = function (str) {
-	var obj = {};
-	var keys = Object.keys(sortKeysLength.desc(extList()));
+	var obj = sortKeysLength.desc(extList());
+	var ext = Object.keys(obj).filter(endsWith.bind(null, str));
 
-	keys.forEach(function (key, i) {
-		obj[keys[i]] = extList()[keys[i]];
-	});
-
-	var ext = Object.keys(obj).filter(function (key) {
-		return endsWith(str, key);
-	})[0] || path.extname(str);
-
-	if (!ext || !obj[ext]) {
+	if (!ext.length) {
 		return null;
 	}
 
-	return { ext: ext, mime: obj[ext] };
+	return { ext: ext[0], mime: obj[ext[0]] };
 };
