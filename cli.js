@@ -7,10 +7,10 @@ var meow = require('meow');
 var cli = meow({
 	help: [
 		'Usage',
-		'  $ extname <file>',
+		'  $ ext-name <file>',
 		'',
 		'Example',
-		'  $ extname file.tar.gz'
+		'  $ ext-name file.tar.gz'
 	].join('\n')
 });
 
@@ -19,7 +19,7 @@ if (!cli.input.length) {
 		'Specify a file',
 		'',
 		'Example',
-		'  $ extname file.tar.gz'
+		'  $ ext-name file.tar.gz'
 	].join('\n'));
 
 	process.exit(1);

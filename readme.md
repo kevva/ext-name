@@ -27,13 +27,13 @@ $ npm install --global ext-name
 ```
 
 ```
-  $ extname --help
+  $ ext-name --help
 
   Usage
-    $ extname <file>
+    $ ext-name <file>
 
   Example
-    $ extname file.tar.gz
+    $ ext-name file.tar.gz
 ```
 
 
