@@ -1,6 +1,6 @@
 {
   "name": "ext-name",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Get the file extension and MIME type from a file",
   "license": "MIT",
   "repository": "kevva/ext-name",
