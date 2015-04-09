@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var extname = require('./');
+var extName = require('./');
 var meow = require('meow');
 
 var cli = meow({
@@ -25,4 +25,4 @@ if (!cli.input.length) {
 	process.exit(1);
 }
 
-console.log(extname(cli.input[0]));
+console.log(extName(cli.input[0]));

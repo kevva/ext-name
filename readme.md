@@ -2,36 +2,40 @@
 
 > Get the file extension and MIME type from a file
 
+
 ## Install
 
-```bash
+```
 $ npm install --save ext-name
 ```
+
 
 ## Usage
 
 ```js
-var extname = require('ext-name');
+var extName = require('ext-name');
 
-console.log(extname('foobar.tar'));
-//=> { 'ext': 'tar', 'mime': 'application/x-tar' }
+console.log(extName('foobar.tar'));
+//=> {'ext': 'tar', 'mime': 'application/x-tar'}
 ```
+
 
 ## CLI
 
-```bash
+```
 $ npm install --global ext-name
 ```
 
-```bash
-$ extname --help
-
-Usage
-  $ extname <file>
-
-Example
-  $ extname file.tar.gz
 ```
+  $ extname --help
+
+  Usage
+    $ extname <file>
+
+  Example
+    $ extname file.tar.gz
+```
+
 
 ## License
 

@@ -9,8 +9,11 @@ module.exports = function (str) {
 	var ext = Object.keys(obj).filter(endsWith.bind(null, str));
 
 	if (!ext.length) {
-		return null;
+		return;
 	}
 
-	return { ext: ext[0], mime: obj[ext[0]] };
+	return {
+		ext: ext[0],
+		mime: obj[ext[0]]
+	};
 };
