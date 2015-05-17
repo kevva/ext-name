@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 
-var extName = require('./');
 var meow = require('meow');
+var extName = require('./');
 
 var cli = meow({
 	help: [
