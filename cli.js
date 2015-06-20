@@ -11,7 +11,7 @@ var cli = meow({
 		'',
 		'Example',
 		'  $ ext-name file.tar.gz'
-	].join('\n')
+	]
 });
 
 if (!cli.input.length) {

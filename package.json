@@ -30,7 +30,7 @@
   "dependencies": {
     "ends-with": "^0.2.0",
     "ext-list": "^2.0.0",
-    "meow": "^3.1.0",
+    "meow": "^3.3.0",
     "sort-keys-length": "^1.0.0"
   },
   "devDependencies": {
