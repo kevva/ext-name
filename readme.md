@@ -20,21 +20,10 @@ console.log(extName('foobar.tar'));
 ```
 
 
-## CLI
+## Related
 
-```
-$ npm install --global ext-name
-```
-
-```
-  $ ext-name --help
-
-  Usage
-    $ ext-name <file>
-
-  Example
-    $ ext-name file.tar.gz
-```
+* [ext-name-cli](https://github.com/kevva/ext-name-cli) - CLI for this module
+* [file-type](https://github.com/sindresorhus/file-type) - Detect the file type of a Buffer/Uint8Array
 
 
 ## License
