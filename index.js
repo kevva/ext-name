@@ -1,14 +1,14 @@
 'use strict';
-var endsWith = require('ends-with');
-var extList = require('ext-list');
-var sortKeysLength = require('sort-keys-length');
+const endsWith = require('ends-with');
+const extList = require('ext-list');
+const sortKeysLength = require('sort-keys-length');
 
-module.exports = function (str) {
-	var obj = sortKeysLength.desc(extList());
-	var ext = Object.keys(obj).filter(endsWith.bind(null, str));
+module.exports = str => {
+	const obj = sortKeysLength.desc(extList());
+	const ext = Object.keys(obj).filter(x => endsWith(str, x));
 
 	if (!ext.length) {
-		return;
+		return null;
 	}
 
 	return {

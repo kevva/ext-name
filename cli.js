@@ -1,26 +1,18 @@
 #!/usr/bin/env node
 'use strict';
-var meow = require('meow');
-var extName = require('./');
+const meow = require('meow');
+const extName = require('./');
 
-var cli = meow({
-	help: [
-		'Usage',
-		'  $ ext-name <file>',
-		'',
-		'Example',
-		'  $ ext-name file.tar.gz'
-	]
-});
+const cli = meow(`
+	Usage
+	  $ ext-name <file>
 
-if (!cli.input.length) {
-	console.error([
-		'Specify a file',
-		'',
-		'Example',
-		'  $ ext-name file.tar.gz'
-	].join('\n'));
+	Example
+	  $ ext-name file.tar.gz
+`);
 
+if (cli.input.length === 0) {
+	console.error('Specify a file');
 	process.exit(1);
 }
 
