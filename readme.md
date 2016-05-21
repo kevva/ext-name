@@ -1,4 +1,4 @@
-# ext-name [![Build Status](http://img.shields.io/travis/kevva/ext-name.svg?style=flat)](https://travis-ci.org/kevva/ext-name)
+# ext-name [![Build Status](https://travis-ci.org/kevva/ext-name.svg?branch=master)](https://travis-ci.org/kevva/ext-name)
 
 > Get the file extension and MIME type from a file
 
@@ -16,7 +16,7 @@ $ npm install --save ext-name
 const extName = require('ext-name');
 
 console.log(extName('foobar.tar'));
-//=> {'ext': 'tar', 'mime': 'application/x-tar'}
+//=> {ext: 'tar', mime: 'application/x-tar'}
 ```
 
 
