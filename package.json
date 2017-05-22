@@ -24,15 +24,11 @@
     "mime"
   ],
   "dependencies": {
-    "ends-with": "^0.2.0",
     "ext-list": "^2.0.0",
     "sort-keys-length": "^1.0.0"
   },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
-  },
-  "xo": {
-    "esnext": true
   }
 }

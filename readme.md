@@ -17,7 +17,29 @@ const extName = require('ext-name');
 
 console.log(extName('foobar.tar'));
 //=> {ext: 'tar', mime: 'application/x-tar'}
+
+console.log(extName.mime('application/x-tar'));
+//=> {ext: 'tar', mime: 'application/x-tar'}
 ```
+
+
+## API
+
+### extName(filename)
+
+#### filename
+
+Type: `string`
+
+Get the extension and MIME type from a filename.
+
+### extName.mime(mimetype)
+
+#### mimetype
+
+Type: `string`
+
+Get the extension and MIME type from a MIME type.
 
 
 ## Related
