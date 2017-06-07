@@ -16,16 +16,18 @@ $ npm install --save ext-name
 const extName = require('ext-name');
 
 console.log(extName('foobar.tar'));
-//=> {ext: 'tar', mime: 'application/x-tar'}
+//=> [{ext: 'tar', mime: 'application/x-tar'}]
 
 console.log(extName.mime('application/x-tar'));
-//=> {ext: 'tar', mime: 'application/x-tar'}
+//=> [{ext: 'tar', mime: 'application/x-tar'}]
 ```
 
 
 ## API
 
 ### extName(filename)
+
+Returns an `Array` with objects with the file extension and MIME type.
 
 #### filename
 
@@ -34,6 +36,8 @@ Type: `string`
 Get the extension and MIME type from a filename.
 
 ### extName.mime(mimetype)
+
+Returns an `Array` with objects with the file extension and MIME type.
 
 #### mimetype
 

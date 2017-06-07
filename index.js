@@ -4,28 +4,28 @@ const sortKeysLength = require('sort-keys-length');
 
 module.exports = str => {
 	const obj = sortKeysLength.desc(extList());
-	const ext = Object.keys(obj).find(x => str.endsWith(x));
+	const exts = Object.keys(obj).filter(x => str.endsWith(x));
 
-	if (!ext) {
-		return null;
+	if (exts.length === 0) {
+		return [];
 	}
 
-	return {
-		ext,
-		mime: obj[ext]
-	};
+	return exts.map(x => ({
+		ext: x,
+		mime: obj[x]
+	}));
 };
 
 module.exports.mime = str => {
 	const obj = sortKeysLength.desc(extList());
-	const ext = Object.keys(obj).find(x => obj[x] === str);
+	const exts = Object.keys(obj).filter(x => obj[x] === str);
 
-	if (!ext) {
-		return null;
+	if (exts.length === 0) {
+		return [];
 	}
 
-	return {
-		ext,
-		mime: obj[ext]
-	};
+	return exts.map(x => ({
+		ext: x,
+		mime: obj[x]
+	}));
 };
